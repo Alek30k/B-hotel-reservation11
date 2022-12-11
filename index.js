@@ -24,6 +24,8 @@ mongoose.connection.on("disconneted", () => {
   console.log("mongoDb disconnected!");
 });
 
+const PORT = process.env.PORT || 8800;
+
 //middlewares
 app.use(cors());
 app.use(cookieParser());
@@ -45,7 +47,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   connect();
   console.log("Connect to backend. ");
 });
